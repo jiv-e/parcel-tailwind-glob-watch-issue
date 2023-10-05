@@ -1,0 +1,28 @@
+{
+  "name": "parcel-tailwind-glob-watch-issue",
+  "description": "Bug reproduction for https://github.com/parcel-bundler/parcel/issues/9296.",
+  "scripts": {
+    "start": "parcel watch main.css --no-cache --no-hmr --no-source-maps --dist-dir public"
+  },
+  "postcss": {
+    "plugins": {
+      "postcss-import-ext-glob": true,
+      "postcss-import": true,
+      "tailwindcss": true
+    }
+  },
+  "resolverExcludeAssets": [
+    "public"
+  ],
+  "browserslist": [
+    "defaults"
+  ],
+  "devDependencies": {
+    "@parcel/watcher": "^2.2.0",
+    "parcel": "^2.8.3",
+    "postcss": "^8.4.23",
+    "postcss-import": "^15.1.0",
+    "postcss-import-ext-glob": "^2.1.1",
+    "tailwindcss": "^3.3.3"
+  }
+}
